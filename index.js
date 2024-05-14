@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('*', (req, res) => {
-    res.status(404).send('<h1> 404 Pages </h1>')
+    res.render('error404')//('<h1> 404 Pages </h1>')
 })
 
 app.listen(process.env.PORT)
