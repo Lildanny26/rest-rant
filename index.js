@@ -2,35 +2,23 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+// Requirements & Declarations
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
+// The app using the file places file in controllers folder
 app.use('/places', require('./controllers/places'))
 
-app.get('/', function (req, res) {
+// Home page
+app.get('/', (req, res) => {
     res.render('home')
 })
 
-// GET /places
-app.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
-      }]      
-      res.render('places/index', { places })
-  })  
-
+// 404 Page
 app.get('*', (req, res) => {
-    res.render('error404')//('<h1> 404 Pages </h1>')
+    res.status(404).send('<h1>404 Page</h1>')
+    res.render('error404')
 })
 
+// Always Have this last.
 app.listen(process.env.PORT)
