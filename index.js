@@ -5,6 +5,7 @@ const app = express()
 // Requirements & Declarations
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
 // The app using the file places file in controllers folder
 app.use('/places', require('./controllers/places'))
