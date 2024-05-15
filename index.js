@@ -10,6 +10,8 @@ app.use(express.static('public'))
 // The app using the file places file in controllers folder
 app.use('/places', require('./controllers/places'))
 
+app.use(express.urlencoded({ extended: true }))
+
 // Home page
 app.get('/', (req, res) => {
     res.render('home')
