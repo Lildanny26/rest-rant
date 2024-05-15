@@ -9,10 +9,16 @@ function home () {
         <link rel="stylesheet" href="/style.css"/>
         </head>
           <main>
-              <h1>HOME</h1>
-              <a href="/places">
-                <button className="btn-primary">Places Page</button>
-              </a>
+                <h1>HOME</h1>
+                <div>
+                    <img src="/images/overnightoats.jpg" alt="Oats" />
+                    <div>
+                        Photo by <a href="AUTHOR_LINK">Melissa Belanger</a> on <a href="https://unsplash.com/@melissabelanger">Unsplash</a>
+                    </div>
+                </div>
+                <a href="/places">
+                     <button className="btn-primary">Places Page</button>
+                </a>
             </main>
         </Def>
     )
