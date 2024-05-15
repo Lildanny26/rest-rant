@@ -1,5 +1,6 @@
 // The controller area
 const router = require("express").Router()
+const places = require('../models/places')
 
 // The places route
 // GET /places
